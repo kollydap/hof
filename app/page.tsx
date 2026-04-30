@@ -111,7 +111,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="shrink-0">
             <Image
-              src="/images/logo_red.png"
+              src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
               alt="The Flamezone"
               width={180}
               height={40}
@@ -206,15 +206,25 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
-        {/* Background accent */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: dark
-              ? "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.12) 0%, transparent 70%)"
-              : "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.08) 0%, transparent 70%)",
-          }}
-        />
+        {/* Background image */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <Image
+            src="/images/smile_lady.png"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className={`absolute inset-0 ${dark ? "bg-black/55" : "bg-white/70"}`} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: dark
+                ? "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.12) 0%, transparent 70%)"
+                : "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.08) 0%, transparent 70%)",
+            }}
+          />
+        </div>
 
         <div className="relative max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-600/40 text-red-500 text-xs font-semibold uppercase tracking-widest mb-8">
@@ -244,10 +254,10 @@ export default function Home() {
               Who We Are <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href="#trybe"
+              href="#gatherings"
               className={`inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-full border ${border} hover:border-red-600/60 ${subtext} hover:text-red-600 transition-colors`}
             >
-              Join a Trybe
+              Join Our Services
             </a>
           </div>
         </div>
@@ -311,6 +321,14 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 gap-5">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
+                <Image
+                  src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.24.jpeg"
+                  alt="Flamezone gathering"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
               <InfoCard
                 icon={<Eye className="w-5 h-5 text-red-600" />}
                 title="Our Vision"
@@ -340,6 +358,14 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
               Intentional Spiritual Growth
             </h2>
+          </div>
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/1001478415.jpg"
+              alt="Flamezone teaching"
+              fill
+              className="object-cover object-center"
+            />
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -485,6 +511,14 @@ export default function Home() {
               Our Core Convictions
             </h2>
           </div>
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.43.25.jpeg"
+              alt="Flamezone beliefs"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -522,6 +556,14 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
               Built on <span className="text-red-600">G.O.D.S.R.E.P.</span>
             </h2>
+          </div>
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.23.jpeg"
+              alt="Flamezone community"
+              fill
+              className="object-cover object-center"
+            />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -561,6 +603,14 @@ export default function Home() {
               Being God&apos;s representative demands responsibility. At The
               Flamezone, we raise people who:
             </p>
+          </div>
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.24%20(1).jpeg"
+              alt="Flamezone"
+              fill
+              className="object-cover object-center"
+            />
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -608,7 +658,7 @@ export default function Home() {
           <Label>Our Lead Pastor</Label>
           <div className="grid lg:grid-cols-2 gap-16 mt-10 items-start">
             <div>
-              <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden">
                 <Image
                   src="/images2/1001389555.jpg"
                   alt="Apostle Desmond Omotoyosi"
@@ -693,17 +743,33 @@ export default function Home() {
                 in homes, apartments, or spaces close to where you live.
                 Intentionally small so everyone is seen, heard, and shaped.
               </p>
-              <p className={`${subtext} leading-relaxed mb-8`}>
+              <p className={`${subtext} leading-relaxed mb-6`}>
                 It is not a crowd. It is a family where faith is practiced,
                 friendships are built, and lives are strengthened through
                 consistent community.
               </p>
-              <a
-                href="mailto:theflamezonenation@gmail.com"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors"
-              >
-                Find a Trybe Near You <ArrowRight className="w-4 h-4" />
-              </a>
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                <Image
+                  src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg"
+                  alt="Flamezone Trybe gathering"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="mailto:theflamezonenation@gmail.com"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors text-sm"
+                >
+                  Find a Trybe Near You <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:theflamezonenation@gmail.com?subject=Start a Trybe in My Location"
+                  className={`inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold rounded-full border ${border} ${subtext} hover:border-red-600/60 hover:text-red-600 transition-colors text-sm`}
+                >
+                  Start a Trybe in Your Location
+                </a>
+              </div>
             </div>
 
             <div className="space-y-4">
@@ -798,34 +864,47 @@ export default function Home() {
                 title: "Flamezone Missions",
                 desc: "Strategic mission expressions reaching the unreached across territories.",
                 icon: <Globe className="w-6 h-6 text-red-600" />,
+                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg",
               },
               {
                 title: "FlameKids & Teens",
                 desc: "Nurturing the next generation in faith, identity, and Kingdom purpose.",
                 icon: <Users className="w-6 h-6 text-red-600" />,
+                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg",
               },
               {
                 title: "Gathering of Flames",
                 desc: "A convergence of believers for deeper encounter, alignment, and activation.",
                 icon: <Flame className="w-6 h-6 text-red-600" />,
+                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.46.50.jpeg",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group cursor-pointer`}
+                className={`${cardBg} border ${border} rounded-2xl overflow-hidden hover:border-red-600/40 transition-colors group cursor-pointer`}
               >
-                <div
-                  className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
-                >
-                  {item.icon}
+                <div className="relative w-full aspect-video">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                <p className={`${subtext} text-sm leading-relaxed mb-4`}>
-                  {item.desc}
-                </p>
-                <span className="text-red-600 text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn more <ArrowRight className="w-3 h-3" />
-                </span>
+                <div className="p-8">
+                  <div
+                    className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3 className="font-bold text-lg mb-3">{item.title}</h3>
+                  <p className={`${subtext} text-sm leading-relaxed mb-4`}>
+                    {item.desc}
+                  </p>
+                  <span className="text-red-600 text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -871,10 +950,19 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
             Give to The Flamezone
           </h2>
-          <p className={`${subtext} mb-12 max-w-lg mx-auto`}>
+          <p className={`${subtext} mb-8 max-w-lg mx-auto`}>
             Your generosity fuels the mission — reaching the unreached, building
             Kingdom communities, and sending believers into territories.
           </p>
+          <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/1000875273.jpg"
+              alt="Flamezone giving"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
           <div className="grid sm:grid-cols-3 gap-5">
             {[
               {
@@ -939,21 +1027,33 @@ export default function Home() {
 
       {/* EXPERIENCE CTA */}
       <section className={`py-20 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <Label>Testimonials</Label>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
-            My Flamezone <span className="text-red-600">Experience</span>
-          </h2>
-          <p className={`${subtext} mb-8 max-w-lg mx-auto`}>
-            Real stories. Real transformation. Read what Flamezone has meant to
-            the lives of those who&apos;ve been part of this family.
-          </p>
-          <a
-            href="/experience"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors"
-          >
-            Read the Stories <ArrowRight className="w-4 h-4" />
-          </a>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Label>Testimonials</Label>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
+                My Flamezone <span className="text-red-600">Experience</span>
+              </h2>
+              <p className={`${subtext} mb-8 max-w-lg`}>
+                Real stories. Real transformation. Read what Flamezone has meant to
+                the lives of those who&apos;ve been part of this family.
+              </p>
+              <a
+                href="/experience"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors"
+              >
+                Read the Stories <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/a_lady.png"
+                alt="Flamezone testimony"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1005,7 +1105,7 @@ export default function Home() {
           <div>
             <div className="mb-4">
               <Image
-                src="/images/logo_red.png"
+                src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
                 alt="The Flamezone"
                 width={160}
                 height={36}

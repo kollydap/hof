@@ -80,7 +80,7 @@ export default function ExperiencePage() {
           </div>
           <a href="/" className="shrink-0">
             <Image
-              src="/images/logo_red.png"
+              src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
               alt="The Flamezone"
               width={140}
               height={32}
@@ -170,7 +170,7 @@ export default function ExperiencePage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <a href="/" className="shrink-0">
             <Image
-              src="/images/logo_red.png"
+              src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
               alt="The Flamezone"
               width={120}
               height={28}
