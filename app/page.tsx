@@ -40,7 +40,15 @@ function FacebookIcon({ className }: { className?: string }) {
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
@@ -54,6 +62,7 @@ const NAV_LINKS = [
   { label: "Trybe", href: "#trybe" },
   { label: "Pastor", href: "#pastor" },
   { label: "Ministries", href: "#ministries" },
+  { label: "Experience", href: "/experience" },
 ];
 
 const STATS = [
@@ -86,14 +95,19 @@ export default function Home() {
   const cardBg = dark ? "bg-[#161616]" : "bg-[#f7f7f7]";
   const border = dark ? "border-white/10" : "border-black/10";
   const navBg = scrolled
-    ? dark ? "bg-[#0a0a0a]/95 shadow-lg shadow-black/30" : "bg-white/95 shadow-lg shadow-black/10"
+    ? dark
+      ? "bg-[#0a0a0a]/95 shadow-lg shadow-black/30"
+      : "bg-white/95 shadow-lg shadow-black/10"
     : "bg-transparent";
 
   return (
-    <div className={`${bg} ${text} min-h-screen font-[family-name:var(--font-poppins)]`}>
-
+    <div
+      className={`${bg} ${text} min-h-screen font-[family-name:var(--font-poppins)]`}
+    >
       {/* NAV */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} backdrop-blur-sm`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} backdrop-blur-sm`}
+      >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="shrink-0">
             <Image
@@ -124,8 +138,18 @@ export default function Home() {
               className={`p-2 rounded-full ${dark ? "text-white/50 hover:text-white" : "text-black/40 hover:text-black"} transition-colors`}
               aria-label="Toggle theme"
             >
-              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {dark ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
             </button>
+            <a
+              href="mailto:thedesmondomotoyosi@gmail.com"
+              className={`px-5 py-2.5 text-sm font-semibold rounded-full border ${border} ${subtext} hover:border-red-600/60 hover:text-red-600 transition-colors`}
+            >
+              For Invitations
+            </a>
             <a
               href="#give"
               className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-full transition-colors"
@@ -139,16 +163,26 @@ export default function Home() {
               onClick={() => setDark(!dark)}
               className={`p-2 ${dark ? "text-white/50" : "text-black/40"}`}
             >
-              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {dark ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
             </button>
             <button onClick={() => setMenuOpen(!menuOpen)} className="p-1">
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className={`lg:hidden ${dark ? "bg-[#111]" : "bg-white border-t border-black/10"} px-6 py-4 flex flex-col gap-4`}>
+          <div
+            className={`lg:hidden ${dark ? "bg-[#111]" : "bg-white border-t border-black/10"} px-6 py-4 flex flex-col gap-4`}
+          >
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
@@ -188,15 +222,18 @@ export default function Home() {
             Apostolic · Mission-Minded · Teaching
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
-            Jesus In Us.<br />
+          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-[family-name:var(--font-bebas)]">
+            Jesus In Us.
+            <br />
             <span className="text-red-600">Jesus Through Us.</span>
           </h1>
 
-          <p className={`text-lg md:text-xl ${subtext} max-w-2xl mx-auto leading-relaxed mb-10`}>
-            We exist to raise a generation of God&apos;s representatives — men and
-            women who carry Jesus within and express Him through their lives across
-            territories.
+          <p
+            className={`text-lg md:text-xl ${subtext} max-w-2xl mx-auto leading-relaxed mb-10`}
+          >
+            We exist to raise a generation of God&apos;s representatives — men
+            and women who carry Jesus within and express Him through their lives
+            across territories.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -216,40 +253,54 @@ export default function Home() {
         </div>
 
         {/* Stats bar */}
-        <div className={`relative mt-20 w-full max-w-3xl mx-auto grid grid-cols-3 gap-px rounded-2xl overflow-hidden border ${border}`}>
+        <div
+          className={`relative mt-20 w-full max-w-3xl mx-auto grid grid-cols-3 gap-px rounded-2xl overflow-hidden border ${border}`}
+        >
           {STATS.map((s, i) => (
             <div key={i} className={`${cardBg} px-6 py-6 text-center`}>
               <p className="text-2xl font-bold text-red-600 mb-1">{s.value}</p>
-              <p className={`text-xs font-medium ${subtext} uppercase tracking-wider`}>{s.label}</p>
+              <p
+                className={`text-xs font-medium ${subtext} uppercase tracking-wider`}
+              >
+                {s.label}
+              </p>
             </div>
           ))}
         </div>
 
-        <a href="#about" className={`absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce ${subtext}`}>
+        <a
+          href="#about"
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce ${subtext}`}
+        >
           <ChevronDown className="w-5 h-5" />
         </a>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className={`py-24 px-6 ${dark ? "" : "bg-[#f7f7f7]"}`}>
+      <section
+        id="about"
+        className={`py-24 px-6 ${dark ? "" : "bg-[#f7f7f7]"}`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <Label>Who We Are</Label>
               <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-4 mb-6">
-                A Ministry Built<br />for <span className="text-red-600">Transformation</span>
+                A Ministry Built
+                <br />
+                for <span className="text-red-600">Transformation</span>
               </h2>
               <p className={`${subtext} leading-relaxed mb-5`}>
-                The Flamezone is an apostolic, mission-minded, and teaching ministry
-                founded in 2022 by Apostle Desmond Omotoyosi. What began as a teen
-                fellowship has grown into a full apostolic ministry with a clear mandate
-                to disciple people, shape lives, and extend the influence of Christ
-                across nations.
+                The Flamezone is an apostolic, mission-minded, and teaching
+                ministry founded in 2022 by Apostle Desmond Omotoyosi. What
+                began as a teen fellowship has grown into a full apostolic
+                ministry with a clear mandate to disciple people, shape lives,
+                and extend the influence of Christ across nations.
               </p>
               <p className={`${subtext} leading-relaxed mb-8`}>
-                We are committed to knowing Christ deeply and making Him known across
-                nations and cultures. Our focus is not just conversion, but
-                transformation and deployment.
+                We are committed to knowing Christ deeply and making Him known
+                across nations and cultures. Our focus is not just conversion,
+                but transformation and deployment.
               </p>
               <a
                 href="#pastor"
@@ -271,7 +322,7 @@ export default function Home() {
               <InfoCard
                 icon={<Globe className="w-5 h-5 text-red-600" />}
                 title="Our Mission"
-                text="To reach the unreached, unsaved & unchurched via intense missions — establishing Apostolic centres across territories for the expansion of the Kingdom."
+                text="To reach the unreached, unsaved and unchurched via intense missions and establishing Apostolic centres across territories for intense discipleship and the expansion of the Kingdom community"
                 cardBg={cardBg}
                 border={border}
                 subtext={subtext}
@@ -286,20 +337,41 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <Label>What We Do</Label>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4">Intentional Spiritual Growth</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
+              Intentional Spiritual Growth
+            </h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { icon: <BookOpen className="w-6 h-6 text-red-600" />, title: "In-Depth Teaching", desc: "Revelatory teaching of the Word — equipping believers with clarity, depth, and truth that transforms from the inside out." },
-              { icon: <Wind className="w-6 h-6 text-red-600" />, title: "Transformative Prayer", desc: "Intense and transformative prayer gatherings that create real atmosphere and encounter with God." },
-              { icon: <Send className="w-6 h-6 text-red-600" />, title: "Strategic Missions", desc: "Strategic outreach and mission expressions that take the Kingdom to territories and the unreached." },
+              {
+                icon: <BookOpen className="w-6 h-6 text-red-600" />,
+                title: "In-Depth Teaching",
+                desc: "Revelatory teaching of the Word — equipping believers with clarity, depth, and truth that transforms from the inside out.",
+              },
+              {
+                icon: <Wind className="w-6 h-6 text-red-600" />,
+                title: "Transformative Prayer",
+                desc: "Intense and transformative prayer gatherings that create real atmosphere and encounter with God.",
+              },
+              {
+                icon: <Send className="w-6 h-6 text-red-600" />,
+                title: "Strategic Missions",
+                desc: "Strategic outreach and mission expressions that take the Kingdom to territories and the unreached.",
+              },
             ].map((item) => (
-              <div key={item.title} className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group`}>
-                <div className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}>
+              <div
+                key={item.title}
+                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group`}
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
+                >
                   {item.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                <p className={`${subtext} text-sm leading-relaxed`}>{item.desc}</p>
+                <p className={`${subtext} text-sm leading-relaxed`}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -307,19 +379,42 @@ export default function Home() {
       </section>
 
       {/* GATHERINGS */}
-      <section id="gatherings" className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
+      <section
+        id="gatherings"
+        className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <Label>Our Gatherings</Label>
               <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-4 mb-5">
-                This Is Not<br />
+                This Is Not
+                <br />
                 <span className="text-red-600">Routine Church.</span>
               </h2>
               <p className={`${subtext} leading-relaxed mb-6 text-lg`}>
-                This is a place of encounter, alignment, and activation. Our services
-                are marked by the active manifestation of the Spirit of God.
+                This is a place of encounter, alignment, and activation. Our
+                services are marked by the active manifestation of the Spirit of
+                God.
               </p>
+
+              <div className="flex gap-4 mb-6">
+                {[
+                  { day: "Sunday", time: "9:00 AM" },
+                  { day: "Wednesday", time: "5:00 PM" },
+                ].map((s) => (
+                  <div
+                    key={s.day}
+                    className={`flex-1 ${cardBg} border ${border} rounded-xl p-4 text-center`}
+                  >
+                    <p className="text-red-600 font-bold text-sm uppercase tracking-widest mb-1">
+                      {s.day}
+                    </p>
+                    <p className={`text-xl font-black ${text}`}>{s.time}</p>
+                  </div>
+                ))}
+              </div>
+
               <a
                 href="https://www.youtube.com/@theflamezone_nation"
                 target="_blank"
@@ -333,25 +428,48 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/smile_lady.png"
-                  alt="Flamezone gathering"
+                  src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.46.50.jpeg"
+                  alt="Flamezone service"
                   fill
                   className="object-cover object-center"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: <Music className="w-5 h-5 text-red-600" />, title: "Worship", desc: "A strong atmosphere of worship that ushers you into God's presence." },
-                { icon: <Sparkles className="w-5 h-5 text-red-600" />, title: "Spiritual Gifts", desc: "The full operation of spiritual gifts in every gathering." },
-                { icon: <Mic2 className="w-5 h-5 text-red-600" />, title: "Prophetic", desc: "Prophetic expressions and spiritual songs that build and edify." },
-                { icon: <Zap className="w-5 h-5 text-red-600" />, title: "Miracles", desc: "Tangible, miraculous encounters with God." },
-              ].map((item) => (
-                <div key={item.title} className={`${cardBg} border ${border} rounded-xl p-5 hover:border-red-600/40 transition-colors`}>
-                  <div className="mb-3">{item.icon}</div>
-                  <h4 className="font-semibold text-sm mb-1.5">{item.title}</h4>
-                  <p className={`${subtext} text-xs leading-relaxed`}>{item.desc}</p>
-                </div>
-              ))}
+                {[
+                  {
+                    icon: <Music className="w-5 h-5 text-red-600" />,
+                    title: "Worship",
+                    desc: "A strong atmosphere of worship that ushers you into God's presence.",
+                  },
+                  {
+                    icon: <Sparkles className="w-5 h-5 text-red-600" />,
+                    title: "Spiritual Gifts",
+                    desc: "The full operation of spiritual gifts in every gathering.",
+                  },
+                  {
+                    icon: <Mic2 className="w-5 h-5 text-red-600" />,
+                    title: "Prophetic",
+                    desc: "Prophetic expressions and spiritual songs that build and edify.",
+                  },
+                  {
+                    icon: <Zap className="w-5 h-5 text-red-600" />,
+                    title: "Miracles",
+                    desc: "Tangible, miraculous encounters with God.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className={`${cardBg} border ${border} rounded-xl p-5 hover:border-red-600/40 transition-colors`}
+                  >
+                    <div className="mb-3">{item.icon}</div>
+                    <h4 className="font-semibold text-sm mb-1.5">
+                      {item.title}
+                    </h4>
+                    <p className={`${subtext} text-xs leading-relaxed`}>
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -363,16 +481,32 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <Label>What We Believe</Label>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4">Our Core Convictions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
+              Our Core Convictions
+            </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { n: "01", text: "Every expression of our lives finds its pattern in the works of Christ." },
-              { n: "02", text: "The Word of God is the ultimate standard for doctrine and directives." },
-              { n: "03", text: "Every believer has a unique Kingdom assignment, must be equipped for it, and must fulfil it." },
+              {
+                n: "01",
+                text: "Every expression of our lives finds its pattern in the works of Christ.",
+              },
+              {
+                n: "02",
+                text: "The Word of God is the ultimate standard for doctrine and directives.",
+              },
+              {
+                n: "03",
+                text: "Every believer has a unique Kingdom assignment, must be equipped for it, and must fulfil it.",
+              },
             ].map((item) => (
-              <div key={item.n} className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/30 transition-colors`}>
-                <p className="text-5xl font-black text-red-600/20 mb-4 leading-none">{item.n}</p>
+              <div
+                key={item.n}
+                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/30 transition-colors`}
+              >
+                <p className="text-5xl font-black text-red-600/20 mb-4 leading-none">
+                  {item.n}
+                </p>
                 <p className={`${subtext} leading-relaxed`}>{item.text}</p>
               </div>
             ))}
@@ -380,23 +514,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* OUR APPROACH */}
+      {/* CORE VALUES */}
       <section className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <Label>Our Core Values</Label>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
+              Built on <span className="text-red-600">G.O.D.S.R.E.P.</span>
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { letter: "G", value: "Growth", desc: "We are committed to continuous spiritual, intellectual, and personal growth in every area of life." },
+              { letter: "O", value: "Openness & Accountability", desc: "We cultivate a culture of transparency, vulnerability, and mutual accountability." },
+              { letter: "D", value: "Discipline & Purity", desc: "We pursue holiness and structured living that honours God in spirit and in body." },
+              { letter: "S", value: "Service", desc: "We exist to serve — God, one another, and the world around us." },
+              { letter: "R", value: "Respect & Honour", desc: "We esteem God, leadership, and every individual with deep honour and regard." },
+              { letter: "E", value: "Excellence & Productivity", desc: "We represent God with the highest quality in everything we do and produce." },
+              { letter: "P", value: "Purpose-Driven", desc: "Every life in Flamezone is intentional — discovered, developed, and deployed for Kingdom impact." },
+            ].map((item) => (
+              <div
+                key={item.letter}
+                className={`${cardBg} border ${border} rounded-2xl p-6 hover:border-red-600/40 transition-colors group`}
+              >
+                <p className="text-5xl font-black text-red-600 mb-3 leading-none font-[family-name:var(--font-bebas)] tracking-wide">
+                  {item.letter}
+                </p>
+                <h4 className="font-bold text-sm mb-2">{item.value}</h4>
+                <p className={`${subtext} text-xs leading-relaxed`}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OUR APPROACH */}
+      <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <Label>Our Approach</Label>
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
-              We Raise <span className="text-red-600">God&apos;s Representatives</span>
+              We Raise{" "}
+              <span className="text-red-600">God&apos;s Representatives</span>
             </h2>
             <p className={`${subtext} mt-4 max-w-xl mx-auto`}>
-              Being God&apos;s representative demands responsibility. At The Flamezone, we raise people who:
+              Being God&apos;s representative demands responsibility. At The
+              Flamezone, we raise people who:
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { word: "REPLICATE", sub: "the life and character of Christ in every area of living" },
-              { word: "REPRESENT", sub: "Him accurately in every sphere of influence and culture" },
-              { word: "REPRODUCE", sub: "His influence and impact in the lives of others" },
+              {
+                word: "REPLICATE",
+                sub: "the life and character of Christ in every area of living",
+              },
+              {
+                word: "REPRESENT",
+                sub: "Him accurately in every sphere of influence and culture",
+              },
+              {
+                word: "REPRODUCE",
+                sub: "His influence and impact in the lives of others",
+              },
             ].map((item) => (
               <div
                 key={item.word}
@@ -404,13 +583,19 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30" />
                 <div className="relative">
-                  <p className="text-3xl font-black tracking-wider mb-3">{item.word}</p>
-                  <p className="text-white/80 text-sm leading-relaxed">{item.sub}</p>
+                  <p className="text-3xl font-black tracking-wider mb-3">
+                    {item.word}
+                  </p>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    {item.sub}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-          <p className={`mt-12 text-center ${subtext} italic text-lg max-w-xl mx-auto`}>
+          <p
+            className={`mt-12 text-center ${subtext} italic text-lg max-w-xl mx-auto`}
+          >
             &ldquo;You will be stretched. You will be built. You will be sent.
             This is more than a ministry.&rdquo;
           </p>
@@ -423,45 +608,68 @@ export default function Home() {
           <Label>Our Lead Pastor</Label>
           <div className="grid lg:grid-cols-2 gap-16 mt-10 items-start">
             <div>
-              <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-b from-red-950/30 to-red-900/10 border border-red-600/20">
+              <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/dez.png"
+                  src="/images2/1001389555.jpg"
                   alt="Apostle Desmond Omotoyosi"
                   fill
-                  className="object-contain object-bottom"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
             <div>
-              <h2 className="text-4xl font-bold mb-1">Apostle Desmond Omotoyosi</h2>
+              <h2 className="text-4xl font-bold mb-1">
+                Apostle Desmond Omotoyosi
+              </h2>
               <p className="text-red-600 font-semibold uppercase tracking-widest text-sm mb-6">
                 Lead Pastor · The Flamezone
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
-                {["Visionary Leader", "Veterinary Doctor", "Gospel Songwriter", "Author · 3 Books"].map((b) => (
-                  <span key={b} className={`px-3 py-1 text-xs font-semibold rounded-full border ${border} ${subtext}`}>{b}</span>
+                {[
+                  "Visionary Leader",
+                  "Veterinary Doctor",
+                  "Gospel Songwriter",
+                  "Author · 3 Books",
+                ].map((b) => (
+                  <span
+                    key={b}
+                    className={`px-3 py-1 text-xs font-semibold rounded-full border ${border} ${subtext}`}
+                  >
+                    {b}
+                  </span>
                 ))}
               </div>
               <div className={`space-y-4 ${subtext} leading-relaxed text-sm`}>
                 <p>
-                  Apostle Desmond Omotoyosi is a visionary leader, transformational
-                  coach, and purpose-driven minister committed to raising a generation
-                  of believers who are spiritually empowered, intellectually sound, and
-                  practically equipped to represent God effectively in every sphere of life.
+                  Apostle Desmond Omotoyosi is a visionary leader,
+                  transformational coach, and purpose-driven minister committed
+                  to raising a generation of believers who are spiritually
+                  empowered, intellectually sound, and practically equipped to
+                  represent God effectively in every sphere of life.
                 </p>
                 <p>
-                  As the Lead Pastor of The Flamezone and Convener of the Gathering of
-                  Flames, he carries a divine mandate centered on building God&apos;s
-                  representatives who are liberated, discipled, and equipped. His ministry
-                  is marked by depth, clarity, and a passionate pursuit of spiritual
-                  awakening, discipleship, and kingdom influence.
+                  As the Lead Pastor of The Flamezone and Convener of the
+                  Gathering of Flames, he carries a divine mandate centered on
+                  building God&apos;s representatives who are liberated,
+                  discipled, and equipped. His ministry is marked by depth,
+                  clarity, and a passionate pursuit of spiritual awakening,
+                  discipleship, and kingdom influence.
                 </p>
                 <p>
-                  Beyond ministry, Apostle Desmond is a veterinary doctor, founder of
-                  Pawzle360, a gifted gospel songwriter, and the author of{" "}
-                  <em>Prayer Fuel</em>, <em>Friendship as an Altar of Revival</em>, and{" "}
+                  Beyond ministry, Apostle Desmond is a veterinary doctor,
+                  founder of Pawzle360, a gifted gospel songwriter, and the
+                  author of <em>Prayer Fuel</em>,{" "}
+                  <em>Friendship as an Altar of Revival</em>, and{" "}
                   <em>Hey Purpose, Where Are You?</em>
                 </p>
+              </div>
+              <div className="mt-8">
+                <a
+                  href="mailto:thedesmondomotoyosi@gmail.com"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors text-sm"
+                >
+                  <Mail className="w-4 h-4" /> For Invitations
+                </a>
               </div>
             </div>
           </div>
@@ -469,7 +677,10 @@ export default function Home() {
       </section>
 
       {/* TRYBE */}
-      <section id="trybe" className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
+      <section
+        id="trybe"
+        className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -478,13 +689,14 @@ export default function Home() {
                 Join a <span className="text-red-600">Flamezone Trybe</span>
               </h2>
               <p className={`${subtext} leading-relaxed mb-5`}>
-                A Flamezone Trybe is a small family of 7 to 15 disciples meeting in
-                homes, apartments, or spaces close to where you live. Intentionally
-                small so everyone is seen, heard, and shaped.
+                A Flamezone Trybe is a small family of 7 to 15 disciples meeting
+                in homes, apartments, or spaces close to where you live.
+                Intentionally small so everyone is seen, heard, and shaped.
               </p>
               <p className={`${subtext} leading-relaxed mb-8`}>
-                It is not a crowd. It is a family where faith is practiced, friendships
-                are built, and lives are strengthened through consistent community.
+                It is not a crowd. It is a family where faith is practiced,
+                friendships are built, and lives are strengthened through
+                consistent community.
               </p>
               <a
                 href="mailto:theflamezonenation@gmail.com"
@@ -496,16 +708,37 @@ export default function Home() {
 
             <div className="space-y-4">
               {[
-                { icon: <TrendingUp className="w-5 h-5 text-red-600" />, title: "Accountability that Builds Strength", desc: "We sharpen each other. Growth is intentional and consistent." },
-                { icon: <Heart className="w-5 h-5 text-red-600" />, title: "Genuine Care and Support", desc: "Needs are not ignored. People are seen, supported, and strengthened." },
-                { icon: <CheckCircle2 className="w-5 h-5 text-red-600" />, title: "Visible Spiritual Growth", desc: "Faith becomes active, not theoretical. Lives begin to reflect Christ clearly." },
-                { icon: <MapPin className="w-5 h-5 text-red-600" />, title: "Expansion of Reach", desc: "Church extends beyond a building — into homes, streets, and cities." },
+                {
+                  icon: <TrendingUp className="w-5 h-5 text-red-600" />,
+                  title: "Accountability that Builds Strength",
+                  desc: "We sharpen each other. Growth is intentional and consistent.",
+                },
+                {
+                  icon: <Heart className="w-5 h-5 text-red-600" />,
+                  title: "Genuine Care and Support",
+                  desc: "Needs are not ignored. People are seen, supported, and strengthened.",
+                },
+                {
+                  icon: <CheckCircle2 className="w-5 h-5 text-red-600" />,
+                  title: "Visible Spiritual Growth",
+                  desc: "Faith becomes active, not theoretical. Lives begin to reflect Christ clearly.",
+                },
+                {
+                  icon: <MapPin className="w-5 h-5 text-red-600" />,
+                  title: "Expansion of Reach",
+                  desc: "Church extends beyond a building — into homes, streets, and cities.",
+                },
               ].map((item) => (
-                <div key={item.title} className={`flex gap-4 p-5 ${cardBg} border ${border} rounded-xl hover:border-red-600/40 transition-colors`}>
+                <div
+                  key={item.title}
+                  className={`flex gap-4 p-5 ${cardBg} border ${border} rounded-xl hover:border-red-600/40 transition-colors`}
+                >
                   <div className="shrink-0 mt-0.5">{item.icon}</div>
                   <div>
                     <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
-                    <p className={`${subtext} text-sm leading-relaxed`}>{item.desc}</p>
+                    <p className={`${subtext} text-sm leading-relaxed`}>
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -519,16 +752,25 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <Label>Our Community</Label>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4">Real People. Real Community.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mt-4">
+              Real People. Real Community.
+            </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { src: "/images/a_lady.png", alt: "Flamezone community member" },
+              { src: "/images2/1000850346.jpg", alt: "Flamezone service" },
               { src: "/images/lady1.png", alt: "Flamezone community member" },
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg", alt: "Flamezone service" },
               { src: "/images/lady2.png", alt: "Flamezone community member" },
+              { src: "/images2/1000875273.jpg", alt: "Flamezone service" },
               { src: "/images/two_lady.png", alt: "Flamezone community members" },
+              { src: "/images2/1001478414.jpg", alt: "Flamezone service" },
             ].map((img) => (
-              <div key={img.src} className="relative aspect-[3/4] rounded-2xl overflow-hidden group">
+              <div
+                key={img.src}
+                className="relative aspect-[3/4] rounded-2xl overflow-hidden group"
+              >
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -546,20 +788,41 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <Label>Ministries</Label>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4">Ways to Get Involved</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
+              Ways to Get Involved
+            </h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { title: "Flamezone Missions", desc: "Strategic mission expressions reaching the unreached across territories.", icon: <Globe className="w-6 h-6 text-red-600" /> },
-              { title: "FlameKids & Teens", desc: "Nurturing the next generation in faith, identity, and Kingdom purpose.", icon: <Users className="w-6 h-6 text-red-600" /> },
-              { title: "Gathering of Flames", desc: "A convergence of believers for deeper encounter, alignment, and activation.", icon: <Flame className="w-6 h-6 text-red-600" /> },
+              {
+                title: "Flamezone Missions",
+                desc: "Strategic mission expressions reaching the unreached across territories.",
+                icon: <Globe className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "FlameKids & Teens",
+                desc: "Nurturing the next generation in faith, identity, and Kingdom purpose.",
+                icon: <Users className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Gathering of Flames",
+                desc: "A convergence of believers for deeper encounter, alignment, and activation.",
+                icon: <Flame className="w-6 h-6 text-red-600" />,
+              },
             ].map((item) => (
-              <div key={item.title} className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group cursor-pointer`}>
-                <div className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}>
+              <div
+                key={item.title}
+                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group cursor-pointer`}
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
+                >
                   {item.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                <p className={`${subtext} text-sm leading-relaxed mb-4`}>{item.desc}</p>
+                <p className={`${subtext} text-sm leading-relaxed mb-4`}>
+                  {item.desc}
+                </p>
                 <span className="text-red-600 text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn more <ArrowRight className="w-3 h-3" />
                 </span>
@@ -569,8 +832,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MISSIONS PHOTO GALLERY */}
+      <section className={`pb-24 px-6`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <Label>Flamezone Missions</Label>
+            <h3 className="text-2xl font-bold mt-3">
+              Taking the Kingdom to the Streets
+            </h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg", alt: "Flamezone outreach — children" },
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.35.59.jpeg", alt: "Flamezone outreach — community" },
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg", alt: "Flamezone outreach — serving" },
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00%20(1).jpeg", alt: "Flamezone outreach — prayer" },
+            ].map((img) => (
+              <div key={img.src} className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* GIVE */}
-      <section id="give" className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
+      <section
+        id="give"
+        className={`py-24 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}
+      >
         <div className="max-w-3xl mx-auto text-center">
           <Label>Partner With Us</Label>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
@@ -582,9 +877,21 @@ export default function Home() {
           </p>
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { label: "Offerings", icon: <HandCoins className="w-7 h-7" />, primary: false },
-              { label: "Building Project", icon: <Building2 className="w-7 h-7" />, primary: true },
-              { label: "Mission Projects", icon: <Globe className="w-7 h-7" />, primary: false },
+              {
+                label: "Offerings",
+                icon: <HandCoins className="w-7 h-7" />,
+                primary: false,
+              },
+              {
+                label: "Building Project",
+                icon: <Building2 className="w-7 h-7" />,
+                primary: true,
+              },
+              {
+                label: "Mission Projects",
+                icon: <Globe className="w-7 h-7" />,
+                primary: false,
+              },
             ].map((item) => (
               <button
                 key={item.label}
@@ -602,11 +909,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THE FLAMING PLEDGE */}
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.43.23.jpeg"
+            alt="The Flaming Pledge"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+        <div className="relative max-w-2xl mx-auto text-center text-white">
+          <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-[0.2em] mb-6">
+            <span className="w-6 h-px bg-red-400 inline-block" />
+            The Flaming Pledge
+          </span>
+          <p className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-bebas)] tracking-wide leading-[1.15] text-white">
+            &ldquo;I am God&apos;s Representative.
+            <br />
+            <span className="text-red-400">Jesus in me,</span>
+            <br />
+            Jesus through me,
+            <br />
+            <span className="text-red-400">By the Spirit.&rdquo;</span>
+          </p>
+        </div>
+      </section>
+
+      {/* EXPERIENCE CTA */}
+      <section className={`py-20 px-6 ${dark ? "bg-[#111]" : "bg-[#f7f7f7]"}`}>
+        <div className="max-w-4xl mx-auto text-center">
+          <Label>Testimonials</Label>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
+            My Flamezone <span className="text-red-600">Experience</span>
+          </h2>
+          <p className={`${subtext} mb-8 max-w-lg mx-auto`}>
+            Real stories. Real transformation. Read what Flamezone has meant to
+            the lives of those who&apos;ve been part of this family.
+          </p>
+          <a
+            href="/experience"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition-colors"
+          >
+            Read the Stories <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
       {/* MAILING LIST */}
       <section className="py-24 px-6">
         <div className="max-w-xl mx-auto text-center">
           <Label>Stay Connected</Label>
-          <h2 className="text-4xl font-bold mt-4 mb-3">Join Our Mailing List</h2>
+          <h2 className="text-4xl font-bold mt-4 mb-3">
+            Join Our Mailing List
+          </h2>
           <p className={`${subtext} mb-8 text-sm`}>
             We promise not to spam you — only edifying and amazing content from
             Flamezone Nation.
@@ -617,7 +974,10 @@ export default function Home() {
               Welcome to the Flamezone family!
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row gap-3"
+            >
               <input
                 type="email"
                 required
@@ -638,7 +998,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className={`${dark ? "bg-[#080808] border-t border-white/5" : "bg-[#111] border-t border-black/10"} py-16 px-6`}>
+      <footer
+        className={`${dark ? "bg-[#080808] border-t border-white/5" : "bg-[#111] border-t border-black/10"} py-16 px-6`}
+      >
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-10">
           <div>
             <div className="mb-4">
@@ -656,47 +1018,91 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">Connect</h4>
+            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">
+              Connect
+            </h4>
             <ul className="space-y-2.5 text-sm text-white/50">
-              {["Become a Member", "Prayer Request", "First Timers", "Online Community"].map((l) => (
-                <li key={l}><a href="#" className="hover:text-red-500 transition-colors">{l}</a></li>
+              {[
+                "Become a Member",
+                "Prayer Request",
+                "First Timers",
+                "Online Community",
+              ].map((l) => (
+                <li key={l}>
+                  <a href="#" className="hover:text-red-500 transition-colors">
+                    {l}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">Ministries</h4>
+            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">
+              Ministries
+            </h4>
             <ul className="space-y-2.5 text-sm text-white/50">
-              {["Flamezone Missions", "FlameKids & Teens", "Gathering of Flames"].map((l) => (
-                <li key={l}><a href="#" className="hover:text-red-500 transition-colors">{l}</a></li>
+              {[
+                "Flamezone Missions",
+                "FlameKids & Teens",
+                "Gathering of Flames",
+              ].map((l) => (
+                <li key={l}>
+                  <a href="#" className="hover:text-red-500 transition-colors">
+                    {l}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">Media</h4>
+            <h4 className="text-white/30 font-semibold uppercase tracking-widest text-xs mb-4">
+              Media
+            </h4>
             <ul className="space-y-2.5 text-sm text-white/50">
               <li>
-                <a href="https://www.youtube.com/@theflamezone_nation" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors flex items-center gap-2">
+                <a
+                  href="https://www.youtube.com/@theflamezone_nation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-500 transition-colors flex items-center gap-2"
+                >
                   <PlayCircle className="w-4 h-4" /> Watch Online
                 </a>
               </li>
               <li>
-                <a href="https://t.me/theflamezoneglobal" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors flex items-center gap-2">
+                <a
+                  href="https://t.me/theflamezoneglobal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-500 transition-colors flex items-center gap-2"
+                >
                   <Send className="w-4 h-4" /> Sermons on Telegram
                 </a>
               </li>
               <li>
-                <a href="mailto:theflamezonenation@gmail.com" className="hover:text-red-500 transition-colors flex items-center gap-2">
+                <a
+                  href="mailto:theflamezonenation@gmail.com"
+                  className="hover:text-red-500 transition-colors flex items-center gap-2"
+                >
                   <Mail className="w-4 h-4" /> theflamezonenation@gmail.com
                 </a>
               </li>
             </ul>
             <div className="flex gap-4 mt-5">
-              <a href="#" aria-label="Facebook" className="text-white/30 hover:text-red-500 transition-colors">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="text-white/30 hover:text-red-500 transition-colors"
+              >
                 <FacebookIcon className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Instagram" className="text-white/30 hover:text-red-500 transition-colors">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="text-white/30 hover:text-red-500 transition-colors"
+              >
                 <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
@@ -705,7 +1111,8 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/25 text-xs">
-            © {new Date().getFullYear()} The Flamezone Nation. All rights reserved.
+            © {new Date().getFullYear()} The Flamezone Nation. All rights
+            reserved.
           </p>
           <p className="text-white/25 text-xs">Built for Kingdom impact.</p>
         </div>
@@ -724,7 +1131,12 @@ function Label({ children }: { children: React.ReactNode }) {
 }
 
 function InfoCard({
-  icon, title, text, cardBg, border, subtext,
+  icon,
+  title,
+  text,
+  cardBg,
+  border,
+  subtext,
 }: {
   icon: React.ReactNode;
   title: string;
@@ -734,7 +1146,9 @@ function InfoCard({
   subtext: string;
 }) {
   return (
-    <div className={`${cardBg} border ${border} rounded-2xl p-7 hover:border-red-600/40 transition-colors`}>
+    <div
+      className={`${cardBg} border ${border} rounded-2xl p-7 hover:border-red-600/40 transition-colors`}
+    >
       <div className="flex items-center gap-3 mb-3">
         {icon}
         <h3 className="font-bold text-base">{title}</h3>
