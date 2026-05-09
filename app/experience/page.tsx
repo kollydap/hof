@@ -50,6 +50,23 @@ This is my love story.
 
 And I love Flamezone so much.`,
   },
+  {
+    name: "Ebube Matthew",
+    year: "2022",
+    excerpt:
+      "FlameZone has been of immense blessing to my life as a whole — shapening my growth, my walk with God and values.",
+    story: `FlameZone has been of immense blessing to my life as a whole shapening my growth, my walk with God and values.
+
+Even still having to listen to messages virtually, the experience has been in no way indifferent and been a river to drink from.
+
+One encounter I had and I recall vividly — when I failed a particular course due to the fact that I was very ill for sometime prior to the exams. I was feeling very down, teared up because it was the first time. I hadn't expected to do well but I didn't expect to fail because I was top in the first part of the course.
+
+I listened to one of the messages and I heard Apostle Dez say "THAT PROBLEM THAT LOOKS DIFFICULT JUST NEEDS GOD'S WHISPER" — immediately I got the nudge to post that too and key into it.
+
+There was room to seek redress and make complaints which I took up and in the very end, the result was changed and my grade out of harm's way.
+
+Many more experiences and encounters that have really been wonderful. I pray that FlameZone increases in stature and surges from strength to strength.`,
+  },
 ];
 
 export default function ExperiencePage() {
@@ -65,7 +82,7 @@ export default function ExperiencePage() {
   const testimonial = TESTIMONIALS[active];
 
   return (
-    <div className={`${bg} ${text} min-h-screen font-[family-name:var(--font-poppins)]`}>
+    <div className={`${bg} ${text} min-h-screen font-[var(--font-poppins)]`}>
       {/* NAV */}
       <nav className={`fixed top-0 left-0 right-0 z-50 ${dark ? "bg-[#0a0a0a]/95" : "bg-white/95"} backdrop-blur-sm border-b ${border}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -111,7 +128,7 @@ export default function ExperiencePage() {
           <Flame className="w-3 h-3" />
           Testimonials
         </div>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-[family-name:var(--font-bebas)] tracking-wide leading-[1] mb-4">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-[var(--font-bebas)] tracking-wide leading-[1] mb-4">
           My Flamezone <span className="text-red-600">Experience</span>
         </h1>
         <p className={`${subtext} max-w-xl mx-auto text-lg`}>
@@ -123,6 +140,24 @@ export default function ExperiencePage() {
       {/* MAIN TESTIMONY */}
       <section className="py-12 px-6">
         <div className="max-w-3xl mx-auto">
+          {/* Testimonial selector */}
+          {TESTIMONIALS.length > 1 && (
+            <div className="flex gap-3 mb-6 flex-wrap">
+              {TESTIMONIALS.map((t, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors border ${
+                    active === i
+                      ? "bg-red-600 text-white border-red-600"
+                      : `${cardBg} ${border} ${subtext} hover:border-red-600/50 hover:text-red-600`
+                  }`}
+                >
+                  {t.name}
+                </button>
+              ))}
+            </div>
+          )}
           {/* Quote card */}
           <div className={`${cardBg} border ${border} rounded-3xl p-8 md:p-12 mb-8`}>
             <Quote className="w-10 h-10 text-red-600/40 mb-6" />

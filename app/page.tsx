@@ -56,6 +56,14 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Gatherings", href: "#gatherings" },
@@ -102,7 +110,7 @@ export default function Home() {
 
   return (
     <div
-      className={`${bg} ${text} min-h-screen font-[family-name:var(--font-poppins)]`}
+      className={`${bg} ${text} min-h-screen font-[var(--font-poppins)]`}
     >
       {/* NAV */}
       <nav
@@ -206,22 +214,27 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Image
-            src="/images/smile_lady.png"
-            alt=""
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className={`absolute inset-0 ${dark ? "bg-black/55" : "bg-white/70"}`} />
+        {/* Background */}
+        <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute inset-0"
             style={{
               background: dark
-                ? "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.12) 0%, transparent 70%)"
-                : "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(220,38,38,0.08) 0%, transparent 70%)",
+                ? `radial-gradient(ellipse 90% 55% at 50% 0%, rgba(220,38,38,0.16) 0%, transparent 55%),
+                   radial-gradient(ellipse 50% 50% at 15% 70%, rgba(220,38,38,0.09) 0%, transparent 50%),
+                   radial-gradient(ellipse 50% 50% at 85% 70%, rgba(180,10,10,0.07) 0%, transparent 50%),
+                   radial-gradient(ellipse 70% 40% at 50% 100%, rgba(220,38,38,0.11) 0%, transparent 60%)`
+                : `radial-gradient(ellipse 90% 55% at 50% 0%, rgba(220,38,38,0.09) 0%, transparent 55%),
+                   radial-gradient(ellipse 70% 40% at 50% 100%, rgba(220,38,38,0.06) 0%, transparent 60%)`,
+            }}
+          />
+          <div
+            className={`absolute inset-0 ${dark ? "opacity-[0.022]" : "opacity-[0.035]"}`}
+            style={{
+              backgroundImage: dark
+                ? `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`
+                : `linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)`,
+              backgroundSize: "80px 80px",
             }}
           />
         </div>
@@ -232,7 +245,7 @@ export default function Home() {
             Apostolic · Mission-Minded · Teaching
           </div>
 
-          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-[family-name:var(--font-bebas)]">
+          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-[var(--font-bebas)]">
             Jesus In Us.
             <br />
             <span className="text-red-600">Jesus Through Us.</span>
@@ -326,13 +339,13 @@ export default function Home() {
                   src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.24.jpeg"
                   alt="Flamezone gathering"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                 />
               </div>
               <InfoCard
                 icon={<Eye className="w-5 h-5 text-red-600" />}
                 title="Our Vision"
-                text="To raise God's representatives with Jesus in them, through them, across territories."
+                text="Raising a Force of sendable God-Representatives who express Jesus in them and through them across nations."
                 cardBg={cardBg}
                 border={border}
                 subtext={subtext}
@@ -346,60 +359,6 @@ export default function Home() {
                 subtext={subtext}
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE DO */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <Label>What We Do</Label>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4">
-              Intentional Spiritual Growth
-            </h2>
-          </div>
-          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src="/images2/1001478415.jpg"
-              alt="Flamezone teaching"
-              fill
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <BookOpen className="w-6 h-6 text-red-600" />,
-                title: "In-Depth Teaching",
-                desc: "Revelatory teaching of the Word — equipping believers with clarity, depth, and truth that transforms from the inside out.",
-              },
-              {
-                icon: <Wind className="w-6 h-6 text-red-600" />,
-                title: "Transformative Prayer",
-                desc: "Intense and transformative prayer gatherings that create real atmosphere and encounter with God.",
-              },
-              {
-                icon: <Send className="w-6 h-6 text-red-600" />,
-                title: "Strategic Missions",
-                desc: "Strategic outreach and mission expressions that take the Kingdom to territories and the unreached.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group`}
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
-                >
-                  {item.icon}
-                </div>
-                <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                <p className={`${subtext} text-sm leading-relaxed`}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -502,6 +461,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WHAT WE DO */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <Label>What We Do</Label>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
+              Intentional Spiritual Growth
+            </h2>
+          </div>
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="/images2/1001478415.jpg"
+              alt="Flamezone teaching"
+              fill
+              className="object-cover object-[center_20%]"
+            />
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <BookOpen className="w-6 h-6 text-red-600" />,
+                title: "In-Depth Teaching",
+                desc: "Revelatory teaching of the Word — equipping believers with clarity, depth, and truth that transforms from the inside out.",
+              },
+              {
+                icon: <Wind className="w-6 h-6 text-red-600" />,
+                title: "Transformative Prayer",
+                desc: "Intense and transformative prayer gatherings that create real atmosphere and encounter with God.",
+              },
+              {
+                icon: <Send className="w-6 h-6 text-red-600" />,
+                title: "Strategic Missions",
+                desc: "Strategic outreach and mission expressions that take the Kingdom to territories and the unreached.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className={`${cardBg} border ${border} rounded-2xl p-8 hover:border-red-600/40 transition-colors group`}
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl ${dark ? "bg-red-600/10" : "bg-red-50"} flex items-center justify-center mb-5 group-hover:bg-red-600/20 transition-colors`}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-lg mb-3">{item.title}</h3>
+                <p className={`${subtext} text-sm leading-relaxed`}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHAT WE BELIEVE */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
@@ -516,7 +529,7 @@ export default function Home() {
               src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.43.25.jpeg"
               alt="Flamezone beliefs"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -562,7 +575,7 @@ export default function Home() {
               src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.23.jpeg"
               alt="Flamezone community"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -577,9 +590,9 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.letter}
-                className={`${cardBg} border ${border} rounded-2xl p-6 hover:border-red-600/40 transition-colors group`}
+                className={`${cardBg} border ${border} rounded-2xl p-6 hover:border-red-600/40 transition-all group shadow-[0_0_18px_rgba(220,38,38,0.07)] hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]`}
               >
-                <p className="text-5xl font-black text-red-600 mb-3 leading-none font-[family-name:var(--font-bebas)] tracking-wide">
+                <p className="text-5xl font-black text-red-600 mb-3 leading-none font-[var(--font-bebas)] tracking-wide drop-shadow-[0_0_12px_rgba(220,38,38,0.9)]">
                   {item.letter}
                 </p>
                 <h4 className="font-bold text-sm mb-2">{item.value}</h4>
@@ -609,7 +622,7 @@ export default function Home() {
               src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.24%20(1).jpeg"
               alt="Flamezone"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
@@ -753,7 +766,7 @@ export default function Home() {
                   src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg"
                   alt="Flamezone Trybe gathering"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -824,14 +837,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: "/images/a_lady.png", alt: "Flamezone community member" },
-              { src: "/images2/1000850346.jpg", alt: "Flamezone service" },
-              { src: "/images/lady1.png", alt: "Flamezone community member" },
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg", alt: "Flamezone service" },
-              { src: "/images/lady2.png", alt: "Flamezone community member" },
-              { src: "/images2/1000875273.jpg", alt: "Flamezone service" },
-              { src: "/images/two_lady.png", alt: "Flamezone community members" },
-              { src: "/images2/1001478414.jpg", alt: "Flamezone service" },
+              { src: "/images/a_lady.png", alt: "Flamezone community member", pos: "object-top" },
+              { src: "/images2/1000850346.jpg", alt: "Flamezone service", pos: "object-[center_18%]" },
+              { src: "/images/lady1.png", alt: "Flamezone community member", pos: "object-top" },
+              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg", alt: "Flamezone service", pos: "object-top" },
+              { src: "/images/lady2.png", alt: "Flamezone community member", pos: "object-top" },
+              { src: "/images2/1000875273.jpg", alt: "Flamezone service", pos: "object-[center_12%]" },
+              { src: "/images/two_lady.png", alt: "Flamezone community members", pos: "object-top" },
+              { src: "/images2/1001478414.jpg", alt: "Flamezone service", pos: "object-[center_15%]" },
             ].map((img) => (
               <div
                 key={img.src}
@@ -841,7 +854,7 @@ export default function Home() {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className={`object-cover ${img.pos} transition-transform duration-500 group-hover:scale-105`}
                 />
               </div>
             ))}
@@ -867,7 +880,7 @@ export default function Home() {
                 img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg",
               },
               {
-                title: "FlameKids & Teens",
+                title: "FlameKids 'n' Teens",
                 desc: "Nurturing the next generation in faith, identity, and Kingdom purpose.",
                 icon: <Users className="w-6 h-6 text-red-600" />,
                 img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg",
@@ -888,7 +901,7 @@ export default function Home() {
                     src={item.img}
                     alt={item.title}
                     fill
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-8">
@@ -959,7 +972,7 @@ export default function Home() {
               src="/images2/1000875273.jpg"
               alt="Flamezone giving"
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_15%]"
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>
@@ -1013,7 +1026,7 @@ export default function Home() {
             <span className="w-6 h-px bg-red-400 inline-block" />
             The Flaming Pledge
           </span>
-          <p className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-bebas)] tracking-wide leading-[1.15] text-white">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-[var(--font-bebas)] tracking-wide leading-[1.15] text-white">
             &ldquo;I am God&apos;s Representative.
             <br />
             <span className="text-red-400">Jesus in me,</span>
@@ -1115,6 +1128,11 @@ export default function Home() {
             <p className="text-white/40 text-sm leading-relaxed">
               Jesus In Us. Jesus Through Us.
             </p>
+            <div className="mt-4 text-white/30 text-xs leading-relaxed space-y-0.5">
+              <p className="text-white/40 font-semibold uppercase tracking-wider text-xs mb-1">Flamezone Auditorium</p>
+              <p>Old Winners Road, Off Newton Street,</p>
+              <p>Ekosodin, Benin City, Nigeria</p>
+            </div>
           </div>
 
           <div>
@@ -1144,7 +1162,7 @@ export default function Home() {
             <ul className="space-y-2.5 text-sm text-white/50">
               {[
                 "Flamezone Missions",
-                "FlameKids & Teens",
+                "FlameKids 'n' Teens",
                 "Gathering of Flames",
               ].map((l) => (
                 <li key={l}>
@@ -1192,18 +1210,31 @@ export default function Home() {
             </ul>
             <div className="flex gap-4 mt-5">
               <a
-                href="#"
+                href="https://www.facebook.com/theflamezonenation"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="text-white/30 hover:text-red-500 transition-colors"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/theflamezone_nation?igsh=MTR0em16ODI1bDQxMw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="text-white/30 hover:text-red-500 transition-colors"
               >
                 <InstagramIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/flamezonenation"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                className="text-white/30 hover:text-red-500 transition-colors"
+              >
+                <XIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
