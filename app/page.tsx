@@ -761,12 +761,12 @@ export default function Home() {
                 friendships are built, and lives are strengthened through
                 consistent community.
               </p>
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
                 <Image
                   src="/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg"
                   alt="Flamezone Trybe gathering"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-[center_20%]"
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
