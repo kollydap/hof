@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Bebas_Neue } from "next/font/google";
+import { Poppins, Bebas_Neue, Anton } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -14,6 +14,12 @@ const bebasNeue = Bebas_Neue({
   variable: "--font-bebas",
 });
 
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anton",
+});
+
 export const metadata: Metadata = {
   title: "The Flamezone | Jesus In Us. Jesus Through Us.",
   description:
@@ -26,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${bebasNeue.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${bebasNeue.variable} ${anton.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

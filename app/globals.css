@@ -3,6 +3,7 @@
 @theme inline {
   --font-sans: var(--font-poppins);
   --font-bebas: var(--font-bebas);
+  --font-anton: var(--font-anton);
 }
 
 html {
@@ -14,5 +15,5 @@ body {
 }
 
 .font-impact {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: var(--font-anton), Impact, Haettenschweiler, sans-serif;
 }
