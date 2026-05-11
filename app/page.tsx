@@ -109,9 +109,7 @@ export default function Home() {
     : "bg-transparent";
 
   return (
-    <div
-      className={`${bg} ${text} min-h-screen font-sans`}
-    >
+    <div className={`${bg} ${text} min-h-screen font-sans`}>
       {/* NAV */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} backdrop-blur-sm`}
@@ -345,7 +343,7 @@ export default function Home() {
               <InfoCard
                 icon={<Eye className="w-5 h-5 text-red-600" />}
                 title="Our Vision"
-                text="Raising a Force of sendable God-Representatives who express Jesus in them and through them across nations."
+                text="Raising a sendable force of God-Representatives who experience Jesus in them and express Jesus through them across nations."
                 cardBg={cardBg}
                 border={border}
                 subtext={subtext}
@@ -383,7 +381,7 @@ export default function Home() {
                 God.
               </p>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4 mb-4">
                 {[
                   { day: "Sunday", time: "9:00 AM" },
                   { day: "Wednesday", time: "5:00 PM" },
@@ -398,6 +396,24 @@ export default function Home() {
                     <p className={`text-xl font-black ${text}`}>{s.time}</p>
                   </div>
                 ))}
+              </div>
+
+              <div
+                className={`${cardBg} border ${border} rounded-xl p-4 mb-6 flex items-start gap-3`}
+              >
+                <MapPin className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-red-600 font-bold text-sm uppercase tracking-widest mb-0.5">
+                    Venue
+                  </p>
+                  <p className={`text-sm ${subtext}`}>Flamezone Auditorium</p>
+                  <p className={`text-sm ${subtext}`}>
+                    Old Winners Road, Off Newton Street,
+                  </p>
+                  <p className={`text-sm ${subtext}`}>
+                    Ekosodin, Benin City, Nigeria
+                  </p>
+                </div>
               </div>
 
               <a
@@ -580,13 +596,41 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { letter: "G", value: "Growth", desc: "We are committed to continuous spiritual, intellectual, and personal growth in every area of life." },
-              { letter: "O", value: "Openness & Accountability", desc: "We cultivate a culture of transparency, vulnerability, and mutual accountability." },
-              { letter: "D", value: "Discipline & Purity", desc: "We pursue holiness and structured living that honours God in spirit and in body." },
-              { letter: "S", value: "Service", desc: "We exist to serve — God, one another, and the world around us." },
-              { letter: "R", value: "Respect & Honour", desc: "We esteem God, leadership, and every individual with deep honour and regard." },
-              { letter: "E", value: "Excellence & Productivity", desc: "We represent God with the highest quality in everything we do and produce." },
-              { letter: "P", value: "Purpose-Driven", desc: "Every life in Flamezone is intentional — discovered, developed, and deployed for Kingdom impact." },
+              {
+                letter: "G",
+                value: "Growth",
+                desc: "We are committed to continuous spiritual, intellectual, and personal growth in every area of life.",
+              },
+              {
+                letter: "O",
+                value: "Openness & Accountability",
+                desc: "We cultivate a culture of transparency, vulnerability, and mutual accountability.",
+              },
+              {
+                letter: "D",
+                value: "Discipline & Purity",
+                desc: "We pursue holiness and structured living that honours God in spirit and in body.",
+              },
+              {
+                letter: "S",
+                value: "Service",
+                desc: "We exist to serve — God, one another, and the world around us.",
+              },
+              {
+                letter: "R",
+                value: "Respect & Honour",
+                desc: "We esteem God, leadership, and every individual with deep honour and regard.",
+              },
+              {
+                letter: "E",
+                value: "Excellence & Productivity",
+                desc: "We represent God with the highest quality in everything we do and produce.",
+              },
+              {
+                letter: "P",
+                value: "Purpose-Driven",
+                desc: "Every life in Flamezone is intentional — discovered, developed, and deployed for Kingdom impact.",
+              },
             ].map((item) => (
               <div
                 key={item.letter}
@@ -596,7 +640,9 @@ export default function Home() {
                   {item.letter}
                 </p>
                 <h4 className="font-bold text-sm mb-2">{item.value}</h4>
-                <p className={`${subtext} text-xs leading-relaxed`}>{item.desc}</p>
+                <p className={`${subtext} text-xs leading-relaxed`}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -670,7 +716,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <Label>Our Lead Pastor</Label>
           <div className="flex flex-col sm:flex-row gap-10 mt-10 items-start">
-            <div className="shrink-0 w-52 sm:w-64">
+            <div className="shrink-0 w-72 sm:w-96">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                 <Image
                   src="/images2/1001389555.jpg"
@@ -837,14 +883,46 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: "/images/a_lady.png", alt: "Flamezone community member", pos: "object-top" },
-              { src: "/images2/1000850346.jpg", alt: "Flamezone service", pos: "object-[center_18%]" },
-              { src: "/images/lady1.png", alt: "Flamezone community member", pos: "object-top" },
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg", alt: "Flamezone service", pos: "object-top" },
-              { src: "/images/lady2.png", alt: "Flamezone community member", pos: "object-top" },
-              { src: "/images2/1000875273.jpg", alt: "Flamezone service", pos: "object-[center_12%]" },
-              { src: "/images/two_lady.png", alt: "Flamezone community members", pos: "object-top" },
-              { src: "/images2/1001478414.jpg", alt: "Flamezone service", pos: "object-[center_15%]" },
+              {
+                src: "/images/a_lady.png",
+                alt: "Flamezone community member",
+                pos: "object-top",
+              },
+              {
+                src: "/images2/1000850346.jpg",
+                alt: "Flamezone service",
+                pos: "object-[center_18%]",
+              },
+              {
+                src: "/images/lady1.png",
+                alt: "Flamezone community member",
+                pos: "object-top",
+              },
+              {
+                src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.45.25.jpeg",
+                alt: "Flamezone service",
+                pos: "object-top",
+              },
+              {
+                src: "/images/lady2.png",
+                alt: "Flamezone community member",
+                pos: "object-top",
+              },
+              {
+                src: "/images2/1000875273.jpg",
+                alt: "Flamezone service",
+                pos: "object-[center_12%]",
+              },
+              {
+                src: "/images/two_lady.png",
+                alt: "Flamezone community members",
+                pos: "object-top",
+              },
+              {
+                src: "/images2/1001478414.jpg",
+                alt: "Flamezone service",
+                pos: "object-[center_15%]",
+              },
             ].map((img) => (
               <div
                 key={img.src}
@@ -877,13 +955,13 @@ export default function Home() {
                 title: "Flamezone Missions",
                 desc: "Strategic mission expressions reaching the unreached across territories.",
                 icon: <Globe className="w-6 h-6 text-red-600" />,
-                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg",
+                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg",
               },
               {
                 title: "FlameKids 'n' Teens",
                 desc: "Nurturing the next generation in faith, identity, and Kingdom purpose.",
                 icon: <Users className="w-6 h-6 text-red-600" />,
-                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg",
+                img: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg",
               },
               {
                 title: "Gathering of Flames",
@@ -935,12 +1013,27 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg", alt: "Flamezone outreach — children" },
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.35.59.jpeg", alt: "Flamezone outreach — community" },
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg", alt: "Flamezone outreach — serving" },
-              { src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00%20(1).jpeg", alt: "Flamezone outreach — prayer" },
+              {
+                src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00.jpeg",
+                alt: "Flamezone outreach — children",
+              },
+              {
+                src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.35.59.jpeg",
+                alt: "Flamezone outreach — community",
+              },
+              {
+                src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.01.jpeg",
+                alt: "Flamezone outreach — serving",
+              },
+              {
+                src: "/images2/WhatsApp%20Image%202026-04-27%20at%2020.36.00%20(1).jpeg",
+                alt: "Flamezone outreach — prayer",
+              },
             ].map((img) => (
-              <div key={img.src} className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+              <div
+                key={img.src}
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden group"
+              >
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -1048,8 +1141,8 @@ export default function Home() {
                 My Flamezone <span className="text-red-600">Experience</span>
               </h2>
               <p className={`${subtext} mb-8 max-w-lg`}>
-                Real stories. Real transformation. Read what Flamezone has meant to
-                the lives of those who&apos;ve been part of this family.
+                Real stories. Real transformation. Read what Flamezone has meant
+                to the lives of those who&apos;ve been part of this family.
               </p>
               <a
                 href="/experience"
@@ -1129,7 +1222,9 @@ export default function Home() {
               Jesus In Us. Jesus Through Us.
             </p>
             <div className="mt-4 text-white/30 text-xs leading-relaxed space-y-0.5">
-              <p className="text-white/40 font-semibold uppercase tracking-wider text-xs mb-1">Flamezone Auditorium</p>
+              <p className="text-white/40 font-semibold uppercase tracking-wider text-xs mb-1">
+                Flamezone Auditorium
+              </p>
               <p>Old Winners Road, Off Newton Street,</p>
               <p>Ekosodin, Benin City, Nigeria</p>
             </div>
