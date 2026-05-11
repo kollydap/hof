@@ -119,7 +119,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="shrink-0">
             <Image
-              src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
+              src={dark ? "/images/logo_red.png" : "/images/logo_light.png"}
               alt="The Flamezone"
               width={180}
               height={40}
@@ -1118,7 +1118,7 @@ export default function Home() {
           <div>
             <div className="mb-4">
               <Image
-                src={dark ? "/images/logo_red.png" : "/images2/dklogo.png"}
+                src={dark ? "/images/logo_red.png" : "/images/logo_light.png"}
                 alt="The Flamezone"
                 width={160}
                 height={36}
