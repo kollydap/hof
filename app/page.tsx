@@ -670,8 +670,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <Label>Our Lead Pastor</Label>
           <div className="flex flex-col sm:flex-row gap-10 mt-10 items-start">
-            <div className="shrink-0 w-40 sm:w-48">
-              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
+            <div className="shrink-0 w-52 sm:w-64">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                 <Image
                   src="/images2/1001389555.jpg"
                   alt="Apostle Desmond Omotoyosi"
