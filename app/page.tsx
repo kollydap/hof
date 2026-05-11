@@ -245,7 +245,7 @@ export default function Home() {
             Apostolic · Mission-Minded · Teaching
           </div>
 
-          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-[Impact,Haettenschweiler,sans-serif]">
+          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-impact">
             Jesus In Us.
             <br />
             <span className="text-red-600">Jesus Through Us.</span>
