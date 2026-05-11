@@ -110,7 +110,7 @@ export default function Home() {
 
   return (
     <div
-      className={`${bg} ${text} min-h-screen font-[var(--font-poppins)]`}
+      className={`${bg} ${text} min-h-screen font-sans`}
     >
       {/* NAV */}
       <nav
@@ -245,7 +245,7 @@ export default function Home() {
             Apostolic · Mission-Minded · Teaching
           </div>
 
-          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-[var(--font-bebas)]">
+          <h1 className="text-7xl sm:text-8xl md:text-9xl leading-[1] tracking-wide mb-6 font-bebas">
             Jesus In Us.
             <br />
             <span className="text-red-600">Jesus Through Us.</span>
@@ -592,7 +592,7 @@ export default function Home() {
                 key={item.letter}
                 className={`${cardBg} border ${border} rounded-2xl p-6 hover:border-red-600/40 transition-all group shadow-[0_0_18px_rgba(220,38,38,0.07)] hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]`}
               >
-                <p className="text-5xl font-black text-red-600 mb-3 leading-none font-[var(--font-bebas)] tracking-wide drop-shadow-[0_0_12px_rgba(220,38,38,0.9)]">
+                <p className="text-5xl font-black text-red-600 mb-3 leading-none font-bebas tracking-wide drop-shadow-[0_0_12px_rgba(220,38,38,0.9)]">
                   {item.letter}
                 </p>
                 <h4 className="font-bold text-sm mb-2">{item.value}</h4>
@@ -669,9 +669,9 @@ export default function Home() {
       <section id="pastor" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <Label>Our Lead Pastor</Label>
-          <div className="grid lg:grid-cols-2 gap-16 mt-10 items-start">
-            <div>
-              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden">
+          <div className="flex flex-col sm:flex-row gap-10 mt-10 items-start">
+            <div className="shrink-0 w-40 sm:w-48">
+              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
                   src="/images2/1001389555.jpg"
                   alt="Apostle Desmond Omotoyosi"
@@ -680,7 +680,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="text-4xl font-bold mb-1">
                 Apostle Desmond Omotoyosi
               </h2>
@@ -1026,7 +1026,7 @@ export default function Home() {
             <span className="w-6 h-px bg-red-400 inline-block" />
             The Flaming Pledge
           </span>
-          <p className="text-3xl md:text-4xl lg:text-5xl font-[var(--font-bebas)] tracking-wide leading-[1.15] text-white">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-bebas tracking-wide leading-[1.15] text-white">
             &ldquo;I am God&apos;s Representative.
             <br />
             <span className="text-red-400">Jesus in me,</span>

@@ -82,7 +82,7 @@ export default function ExperiencePage() {
   const testimonial = TESTIMONIALS[active];
 
   return (
-    <div className={`${bg} ${text} min-h-screen font-[var(--font-poppins)]`}>
+    <div className={`${bg} ${text} min-h-screen font-sans`}>
       {/* NAV */}
       <nav className={`fixed top-0 left-0 right-0 z-50 ${dark ? "bg-[#0a0a0a]/95" : "bg-white/95"} backdrop-blur-sm border-b ${border}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -128,7 +128,7 @@ export default function ExperiencePage() {
           <Flame className="w-3 h-3" />
           Testimonials
         </div>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-[var(--font-bebas)] tracking-wide leading-[1] mb-4">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bebas tracking-wide leading-[1] mb-4">
           My Flamezone <span className="text-red-600">Experience</span>
         </h1>
         <p className={`${subtext} max-w-xl mx-auto text-lg`}>

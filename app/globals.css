@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-poppins);
+  --font-bebas: var(--font-bebas);
+}
+
 html {
   scroll-behavior: smooth;
 }
